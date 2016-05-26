@@ -7,5 +7,6 @@ namespace Zhuang.Word
 {
     public class Class1
     {
+
     }
 }

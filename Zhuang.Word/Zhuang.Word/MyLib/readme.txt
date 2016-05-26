@@ -1,0 +1,1 @@
+﻿“Aspose.Words.dll”为版本14的破解版。
