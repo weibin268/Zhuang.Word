@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyLib\Aspose.Words.dll" />
-    <Content Include="MyLib\readme.txt" />
+    <Content Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
