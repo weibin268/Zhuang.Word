@@ -11,6 +11,7 @@ namespace Zhuang.Word
     {
         public static void AppendDocument(this Document doc, Document srcDoc)
         {
+            doc.FirstSection.PageSetup.SectionStart = Aspose.Words.SectionStart.Continuous;
             doc.AppendDocument(srcDoc, ImportFormatMode.KeepSourceFormatting);
         }
 
