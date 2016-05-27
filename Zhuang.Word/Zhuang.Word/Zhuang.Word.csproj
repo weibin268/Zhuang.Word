@@ -47,7 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocumentExtensions.cs" />
+    <Compile Include="AsposeWords\DocumentExtensions.cs" />
+    <Compile Include="AsposeWords\DocumentUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
