@@ -20,10 +20,10 @@ namespace Zhuang.Word.AsposeWords
             doc.Range.Replace(oldValue, newValue, true, false);
         }
 
-        public static void InsertDocumentAtBookmark(this Document doc, Document srcDoc)
+        public static void InsertDocumentAtBookmark(this Document doc, string bookmarkName, Document srcDoc)
         {
             //ExStart:InsertDocumentAtBookmark         
-            Bookmark bookmark = doc.Range.Bookmarks["insertionPlace"];
+            Bookmark bookmark = doc.Range.Bookmarks[bookmarkName];
             DocumentUtility.InsertDocument(bookmark.BookmarkStart.ParentNode, srcDoc);
         }
     }
