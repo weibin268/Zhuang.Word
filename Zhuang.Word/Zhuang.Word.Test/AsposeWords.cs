@@ -19,5 +19,19 @@ namespace Zhuang.Word.Test
             docA.Save(@".\c.docx");
 
         }
+
+        [TestMethod]
+        public void TestInsertReplaceDocument()
+        {
+            Document docA = new Document(@".\Files\a.docx");
+            Document docB = new Document(@".\Files\b.docx");
+
+            docA.ReplaceDocument("{zwb}", docB);
+
+            docA.Save(@".\c.docx");
+
+        }
+
+        
     }
 }
