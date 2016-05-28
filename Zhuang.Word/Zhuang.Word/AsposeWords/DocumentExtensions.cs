@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Aspose.Words;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Zhuang.Word.AsposeWords
 {
@@ -15,9 +16,14 @@ namespace Zhuang.Word.AsposeWords
             doc.AppendDocument(srcDoc, ImportFormatMode.KeepSourceFormatting);
         }
 
-        public static void Replace(this Document doc, string oldValue, string newValue)
+        public static void ReplaceText(this Document doc, string oldValue, string newValue)
         {
             doc.Range.Replace(oldValue, newValue, true, false);
+        }
+
+        public static void ReplaceDocument(this Document doc, string oldValue, Document newValue)
+        {
+            doc.Range.Replace(new Regex(oldValue), new InsertDocumentAtReplaceHandler(newValue), false);
         }
 
         public static void InsertDocumentAtBookmark(this Document doc, string bookmarkName, Document srcDoc)

@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AsposeWords\DocumentExtensions.cs" />
     <Compile Include="AsposeWords\DocumentUtility.cs" />
+    <Compile Include="AsposeWords\InsertDocumentAtReplaceHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
