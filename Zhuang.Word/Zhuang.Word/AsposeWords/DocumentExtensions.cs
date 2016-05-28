@@ -44,5 +44,22 @@ namespace Zhuang.Word.AsposeWords
                 return false;
             }
         }
+
+        public static MemoryStream GetMemoryStream(this Document doc,SaveFormat saveFormat)
+        {
+            MemoryStream ms = new MemoryStream();
+            doc.Save(ms, saveFormat);
+            ms.Seek(0, SeekOrigin.Begin);
+            return ms;
+        }
+
+        public static byte[] GetBytes(this Document doc, SaveFormat saveFormat)
+        {
+            var ms = doc.GetMemoryStream(saveFormat);
+            byte[] buffer = new byte[ms.Length];
+            ms.Read(buffer, 0, buffer.Length);
+            ms.Seek(0, SeekOrigin.Begin);
+            return buffer;
+        }
     }
 }
