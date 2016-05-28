@@ -32,5 +32,17 @@ namespace Zhuang.Word.AsposeWords
             Bookmark bookmark = doc.Range.Bookmarks[bookmarkName];
             DocumentUtility.InsertDocument(bookmark.BookmarkStart.ParentNode, srcDoc);
         }
+
+        public static bool IsEmpty(this Document doc)
+        {
+            if (string.IsNullOrWhiteSpace(doc.GetText()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
