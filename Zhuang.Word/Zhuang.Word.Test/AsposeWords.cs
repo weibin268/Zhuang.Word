@@ -21,7 +21,7 @@ namespace Zhuang.Word.Test
         }
 
         [TestMethod]
-        public void TestInsertReplaceDocument()
+        public void TestReplaceDocument()
         {
             Document docA = new Document(@".\Files\a.docx");
             Document docB = new Document(@".\Files\b.docx");
