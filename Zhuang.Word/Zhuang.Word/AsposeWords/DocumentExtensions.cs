@@ -21,6 +21,14 @@ namespace Zhuang.Word.AsposeWords
             doc.Range.Replace(oldValue, newValue, true, false);
         }
 
+        public static void ReplaceText(this Document doc, Dictionary<string, string> dicReplaceValues)
+        {
+            foreach (var item in dicReplaceValues)
+            {
+                ReplaceText(doc, item.Key, item.Value);
+            }
+        }
+
         public static void ReplaceDocument(this Document doc, string oldValue, Document newValue)
         {
             doc.Range.Replace(new Regex(oldValue), new InsertDocumentAtReplaceHandler(newValue), false);
