@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Aspose.Words;
 using Zhuang.Word.AsposeWords;
+using Aspose.Words.Saving;
 
 namespace Zhuang.Word.Test
 {
@@ -32,6 +33,24 @@ namespace Zhuang.Word.Test
 
         }
 
-        
+        [TestMethod]
+        public void TestSaveAsHtml()
+        {
+            Document docA = new Document(@".\Files\a.docx");
+
+            docA.Save(@".\c.html", new HtmlSaveOptions()
+            {
+                PrettyFormat = true,
+                UseHighQualityRendering = true,
+                ExportImagesAsBase64 = true,
+                ExportDocumentProperties = false,
+                ExportPageSetup = false,
+                ExportHeadersFootersMode = ExportHeadersFootersMode.None,
+                ExportDropDownFormFieldAsText = false,
+            });
+
+        }
+
+
     }
 }
